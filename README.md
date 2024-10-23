@@ -9,19 +9,46 @@
 <!-- You can include any other section that is pertinent to your problem -->
 
 ## General Information
-- Provide general information about your project here.
-> The Project is to identify the Meanoma given the picture of the skin disease.
-- What is the business probem that your project is trying to solve?
-> To build a CNN based model which can accurately detect melanoma. Melanoma is a type of cancer that can be deadly if not detected early. It accounts for 75% of skin cancer deaths. A solution that can evaluate images and alert dermatologists about the presence of melanoma has the potential to reduce a lot of manual effort needed in diagnosis.
-- What is the dataset that is being used?
-> The dataset consists of 2357 images of malignant and benign oncological diseases, which were formed from the International Skin Imaging Collaboration (ISIC). 
+This project aims to build a Convolutional Neural Network (CNN) model to detect melanoma, a dangerous type of skin cancer, from skin lesion images. Early detection can save lives, making it essential to develop an accurate and reliable model.
+The dataset used for this project consists of 2.3k train images  split into training and validation sets. The goal was to train a CNN model capable of classifying lesions as melanoma or benign (non-cancerous).
+Various techniques, including data augmentation (e.g., rotations), were employed to prevent overfitting and improve model performance. The final model achieves good accuracy without the need for batch normalization, showing that a simpler architecture with proper regularization can perform well.
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+
+---
+
+Model Architecture
+
+Convolutional Layers:
+
+Layer 1: 32 filters
+
+Layer 2: 64 filters
+
+Layer 3: 128 filters
+
+
+Dense Layer: 128 units
+
+Dropout Regularization:
+
+0.2 after each convolutional layer
+
+0.5 after the final convolutional layer
+
+0.25 after the dense layer
+
+
+Output Layer: Softmax activation for classification
+
+Optimizer: Adam with default learning rate (0.001)
+
+Loss Function: Categorical Crossentropy
+
 
 ## Conclusions
-- Conclusion 1 from the analysis
+The final model achieved 85% training accuracy and 80% validation accuracy, indicating that it generalizes reasonably well across unseen data. Removing batch normalization simplified the model, and with appropriate dropout regularization, the model was able to mitigate overfitting.
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+While the current model performs well, further improvements can be achieved by fine-tuning hyperparameters, increasing the dataset size, or employing advanced architectures like transfer learning models (e.g., ResNet or InceptionV3). Future work will also explore additional augmentation strategies to further enhance generalization.
 
 
 ## Technologies Used
